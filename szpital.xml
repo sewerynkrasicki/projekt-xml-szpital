@@ -2,63 +2,125 @@
 <szpital>
     <pracownicy>
         <lekarze>
-            <lekarz>
+            <lekarz plec='m' id='L1' oddzial='Onkologiczny'>
                 <imie>Grzegorz</imie>
                 <nazwisko>Brzeczyszczykiewicz</nazwisko>
                 <data_ur>1983-03-12</data_ur>
-                <specjalizacja>Onkolog</specjalizacja>
+                <specjalizacja>Onkologia</specjalizacja>
+                <pensja>6700</pensja>
             </lekarz>
-            <lekarz>
+            <lekarz plec='m' id='L2' oddzial='Kardiologiczny'>
                 <imie>Bartłomiej</imie>
                 <nazwisko>Żak</nazwisko>
                 <data_ur>1970-02-21</data_ur>
-                <specjalizacja>Kardiolog</specjalizacja>
+                <specjalizacja>Kardiologia</specjalizacja>
+                <pensja>9000</pensja>
             </lekarz>
-            <lekarz>
-                <imie></imie>
-                <nazwisko></nazwisko>
-                <data_ur></data_ur>
-                <specjalizacja></specjalizacja>
+            <lekarz plec='k' id='L3' oddzial='Internistyczny'>
+                <imie>Katarzyna</imie>
+                <nazwisko>Szumilas</nazwisko>
+                <data_ur>1969-07-09</data_ur>
+                <specjalizacja>Internista</specjalizacja>
+                <pensja>5000</pensja>
             </lekarz>
-            <lekarz>
-                <imie></imie>
-                <nazwisko></nazwisko>
-                <data_ur></data_ur>
-                <specjalizacja></specjalizacja>
+            <lekarz plec='m' id='L4' oddzial='Położniczy'>
+                <imie>Kazimierz</imie>
+                <nazwisko>Kotłowski</nazwisko>
+                <data_ur>1986-12-17</data_ur>
+                <specjalizacja>Ginekologia</specjalizacja>
+                <pensja>6000</pensja>
             </lekarz>
-            <lekarz>
-                <imie></imie>
-                <nazwisko></nazwisko>
-                <data_ur></data_ur>
-                <specjalizacja></specjalizacja>
+            <lekarz plec='k' id='L5' oddzial='Chirurgiczny'>
+                <imie>Alicja</imie>
+                <nazwisko>Czarnogórska</nazwisko>
+                <data_ur>1979-11-16</data_ur>
+                <specjalizacja>Chirurgia</specjalizacja>
+                <pensja>11000</pensja>
             </lekarz>
         </lekarze>
         <pielegniarki>
-            <pielegniarka></pielegniarka>
-            <pielegniarka></pielegniarka>
-            <pielegniarka></pielegniarka>
-            <pielegniarka></pielegniarka>
-            <pielegniarka></pielegniarka>
+            <pielegniarka id='P1' oddzial='Położniczy'>
+                <imie>Katarzyna</imie>
+                <nazwisko>Anglosaska</nazwisko>
+                <data_ur>1969-12-21</data_ur>
+                <specjalizacja>Ginekologiczno-położnicze</specjalizacja>
+                <pensja>3000</pensja>
+            </pielegniarka>
+            <pielegniarka id='P2' oddzial='Internistyczny'>
+                <imie>Teresa</imie>
+                <nazwisko>Jakubowska</nazwisko>
+                <data_ur>1990-03-17</data_ur>
+                <specjalizacja>Internistyczna</specjalizacja>
+                <pensja>3000</pensja>
+            </pielegniarka>
+            <pielegniarka id='P3' oddzial='Onkologiczny'>
+                <imie>Grażyna</imie>
+                <nazwisko>Mysiel</nazwisko>
+                <data_ur>1994-02-13</data_ur>
+                <specjalizacja>Onkologiczna</specjalizacja>
+                <pensja>2700</pensja>
+            </pielegniarka>
+            <pielegniarka id='P4' oddzial='Kardiologiczny'>
+                <imie>Aneta</imie>
+                <nazwisko>Skowronek</nazwisko>
+                <data_ur>1995-03-12</data_ur>
+                <specjalizacja>Kardiologiczna</specjalizacja>
+                <pensja>2500</pensja>
+            </pielegniarka>
+            <pielegniarka id='P5' oddzial='Chirurgiczny'>
+                <imie></imie>
+                <nazwisko></nazwisko>
+                <data_ur></data_ur>
+                <specjalizacja>Chirurgiczna</specjalizacja>
+                <pensja>3200</pensja>
+            </pielegniarka>
         </pielegniarki>
         <ratownicy_medyczni>
-            <ratownik></ratownik>
-            <ratownik></ratownik>
-            <ratownik></ratownik>
-            <ratownik></ratownik>
-            <ratownik></ratownik>
+            <ratownik plec='m' id='R1'>
+                <imie></imie>
+                <nazwisko></nazwisko>
+                <data_ur></data_ur>
+                <stanowisko>Kierowca</stanowisko>
+                <pensja></pensja>
+            </ratownik>
+            <ratownik plec='k' id='R2'>
+                <imie></imie>
+                <nazwisko></nazwisko>
+                <data_ur></data_ur>
+                <stanowisko></stanowisko>
+                <pensja></pensja>
+            </ratownik>
+            <ratownik plec='m' id='R3'>
+                <imie></imie>
+                <nazwisko></nazwisko>
+                <data_ur></data_ur>
+                <stanowisko></stanowisko>
+                <pensja></pensja>
+            </ratownik>
         </ratownicy_medyczni>
     </pracownicy>
     <pacjenci>
-        <pacjent></pacjent>
-        <pacjent></pacjent>
-        <pacjent></pacjent>
-        <pacjent></pacjent>
-        <pacjent></pacjent>
+        <pacjent>
+
+        </pacjent>
+        <pacjent>
+
+        </pacjent>
+        <pacjent>
+
+        </pacjent>
+        <pacjent>
+
+        </pacjent>
+        <pacjent>
+
+        </pacjent>
     </pacjenci>
     <oddzialy>
-        <oddzial></oddzial>
-        <oddzial></oddzial>
-        <oddzial></oddzial>
-        <oddzial></oddzial>
+        <oddzial>Chirurgiczny</oddzial>
+        <oddzial>Onkologiczny</oddzial>
+        <oddzial>Położniczy</oddzial>
+        <oddzial>Kardiologiczny</oddzial>
+        <oddzial>Internistyczny</oddzial>
     </oddzialy>
 </szpital>
