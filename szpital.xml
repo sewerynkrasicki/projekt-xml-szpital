@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
+<?xml-stylesheet type="text/css" href="szpital.css" ?>
 <szpital>
     <oddzialy>
         <oddzial>Chirurgiczny</oddzial>
         <oddzial>Onkologiczny</oddzial>
         <oddzial>Położniczy</oddzial>
         <oddzial>Kardiologiczny</oddzial>
-        <oddzial>Internistyczny</oddzial>
     </oddzialy>
     <karetki>
         <karetka nr_rej='NBR12345'>
@@ -51,14 +51,14 @@
                 <specjalizacja>Kardiologia</specjalizacja>
                 <pensja>9000</pensja>
             </lekarz>
-            <lekarz plec='m' id='L4' oddzial='Położniczy'>
+            <lekarz plec='m' id='L3' oddzial='Położniczy'>
                 <imie>Kazimierz</imie>
                 <nazwisko>Kotłowski</nazwisko>
                 <data_ur>1986-12-17</data_ur>
                 <specjalizacja>Ginekologia</specjalizacja>
                 <pensja>6000</pensja>
             </lekarz>
-            <lekarz plec='k' id='L5' oddzial='Chirurgiczny'>
+            <lekarz plec='k' id='L4' oddzial='Chirurgiczny'>
                 <imie>Alicja</imie>
                 <nazwisko>Czarnogórska</nazwisko>
                 <data_ur>1979-11-16</data_ur>
@@ -74,21 +74,21 @@
                 <specjalizacja>Ginekologiczno-położnicza</specjalizacja>
                 <pensja>3000</pensja>
             </pielegniarka>
-            <pielegniarka id='P3' oddzial='Onkologiczny'>
+            <pielegniarka id='P2' oddzial='Onkologiczny'>
                 <imie>Grażyna</imie>
                 <nazwisko>Mysiel</nazwisko>
                 <data_ur>1994-02-13</data_ur>
                 <specjalizacja>Onkologiczna</specjalizacja>
                 <pensja>2700</pensja>
             </pielegniarka>
-            <pielegniarka id='P4' oddzial='Kardiologiczny'>
+            <pielegniarka id='P3' oddzial='Kardiologiczny'>
                 <imie>Anna</imie>
                 <nazwisko>Skowronek</nazwisko>
                 <data_ur>1995-03-12</data_ur>
                 <specjalizacja>Kardiologiczna</specjalizacja>
                 <pensja>2500</pensja>
             </pielegniarka>
-            <pielegniarka id='P5' oddzial='Chirurgiczny'>
+            <pielegniarka id='P4' oddzial='Chirurgiczny'>
                 <imie>Karolina</imie>
                 <nazwisko>Borowska</nazwisko>
                 <data_ur>1971-05-06</data_ur>
@@ -121,25 +121,25 @@
         <pacjent plec='m' id='PA1' oddzial='Onkologiczny'>
             <imie>Karol</imie>
             <nazwisko>Bosak</nazwisko>
-            <pesel></pesel>
+            <pesel>89110872633</pesel>
             <diagnoza>Rak płuc</diagnoza>
         </pacjent>
         <pacjent plec='m' id='PA2' oddzial='Chirurgiczny'>
             <imie>Bartłomiej</imie>
             <nazwisko>Katar</nazwisko>
-            <pesel></pesel>
+            <pesel>83110941171</pesel>
             <diagnoza>Rana kłuta</diagnoza>
         </pacjent>
         <pacjent plec='k' id='PA3' oddzial='Ginekologiczny'>
             <imie>Joanna</imie>
             <nazwisko>Kosakowska</nazwisko>
-            <pesel></pesel>
+            <pesel>95032176889</pesel>
             <diagnoza>Poród</diagnoza>
         </pacjent>
         <pacjent plec='m' id='PA4' oddzial='Kardiologiczny'>
             <imie>Seweryn</imie>
             <nazwisko>Andrzej</nazwisko>
-            <pesel></pesel>
+            <pesel>85020739136</pesel>
             <diagnoza>Arytmia serca</diagnoza>
         </pacjent>
     </pacjenci>
