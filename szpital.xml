@@ -1,5 +1,40 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <szpital>
+    <oddzialy>
+        <oddzial>Chirurgiczny</oddzial>
+        <oddzial>Onkologiczny</oddzial>
+        <oddzial>Położniczy</oddzial>
+        <oddzial>Kardiologiczny</oddzial>
+        <oddzial>Internistyczny</oddzial>
+    </oddzialy>
+    <karetki>
+        <karetka nr_rej='NBR12345'>
+            <marka>Mercedes</marka>
+            <model>Sprinter</model>
+        </karetka>
+        <karetka nr_rej='NBR54321'>
+            <marka>Volkswagen</marka>
+            <model>Transporter</model>
+        </karetka>
+        <karetka nr_rej='NBR54123'>
+            <marka>Volkswagen</marka>
+            <model>Transporter</model>
+        </karetka>
+    </karetki>
+    <środki_ochrony>
+         <środek_ochrony>
+            <nazwa>Rękawiczki lateksowe</nazwa>
+            <ilość>5000</ilość>
+        </środek_ochrony>
+        <środek_ochrony>
+            <nazwa>Maseczki chirurgiczne</nazwa>
+            <ilość>400</ilość>
+        </środek_ochrony>
+        <środek_ochrony>
+            <nazwa>Fartuch ochronny</nazwa>
+            <ilość>500</ilość>
+        </środek_ochrony>
+    </środki_ochrony>
     <pracownicy>
         <lekarze>
             <lekarz plec='m' id='L1' oddzial='Onkologiczny'>
@@ -15,13 +50,6 @@
                 <data_ur>1970-02-21</data_ur>
                 <specjalizacja>Kardiologia</specjalizacja>
                 <pensja>9000</pensja>
-            </lekarz>
-            <lekarz plec='k' id='L3' oddzial='Internistyczny'>
-                <imie>Katarzyna</imie>
-                <nazwisko>Szumilas</nazwisko>
-                <data_ur>1969-07-09</data_ur>
-                <specjalizacja>Internista</specjalizacja>
-                <pensja>5000</pensja>
             </lekarz>
             <lekarz plec='m' id='L4' oddzial='Położniczy'>
                 <imie>Kazimierz</imie>
@@ -43,14 +71,7 @@
                 <imie>Katarzyna</imie>
                 <nazwisko>Anglosaska</nazwisko>
                 <data_ur>1969-12-21</data_ur>
-                <specjalizacja>Ginekologiczno-położnicze</specjalizacja>
-                <pensja>3000</pensja>
-            </pielegniarka>
-            <pielegniarka id='P2' oddzial='Internistyczny'>
-                <imie>Teresa</imie>
-                <nazwisko>Jakubowska</nazwisko>
-                <data_ur>1990-03-17</data_ur>
-                <specjalizacja>Internistyczna</specjalizacja>
+                <specjalizacja>Ginekologiczno-położnicza</specjalizacja>
                 <pensja>3000</pensja>
             </pielegniarka>
             <pielegniarka id='P3' oddzial='Onkologiczny'>
@@ -61,66 +82,65 @@
                 <pensja>2700</pensja>
             </pielegniarka>
             <pielegniarka id='P4' oddzial='Kardiologiczny'>
-                <imie>Aneta</imie>
+                <imie>Anna</imie>
                 <nazwisko>Skowronek</nazwisko>
                 <data_ur>1995-03-12</data_ur>
                 <specjalizacja>Kardiologiczna</specjalizacja>
                 <pensja>2500</pensja>
             </pielegniarka>
             <pielegniarka id='P5' oddzial='Chirurgiczny'>
-                <imie></imie>
-                <nazwisko></nazwisko>
-                <data_ur></data_ur>
+                <imie>Karolina</imie>
+                <nazwisko>Borowska</nazwisko>
+                <data_ur>1971-05-06</data_ur>
                 <specjalizacja>Chirurgiczna</specjalizacja>
                 <pensja>3200</pensja>
             </pielegniarka>
         </pielegniarki>
         <ratownicy_medyczni>
             <ratownik plec='m' id='R1'>
-                <imie></imie>
-                <nazwisko></nazwisko>
-                <data_ur></data_ur>
-                <stanowisko>Kierowca</stanowisko>
-                <pensja></pensja>
+                <imie>Xawery</imie>
+                <nazwisko>Kula</nazwisko>
+                <data_ur>1996-06-21</data_ur>
+                <pensja>3000</pensja>
             </ratownik>
             <ratownik plec='k' id='R2'>
-                <imie></imie>
-                <nazwisko></nazwisko>
-                <data_ur></data_ur>
-                <stanowisko></stanowisko>
-                <pensja></pensja>
+                <imie>Matylda</imie>
+                <nazwisko>Sobolewska</nazwisko>
+                <data_ur>1979-01-23</data_ur>
+                <pensja>3000</pensja>
             </ratownik>
             <ratownik plec='m' id='R3'>
-                <imie></imie>
-                <nazwisko></nazwisko>
-                <data_ur></data_ur>
-                <stanowisko></stanowisko>
-                <pensja></pensja>
+                <imie>Roman</imie>
+                <nazwisko>Pilot</nazwisko>
+                <data_ur>1982-09-03</data_ur>
+                <pensja>3000</pensja>
             </ratownik>
         </ratownicy_medyczni>
     </pracownicy>
     <pacjenci>
-        <pacjent>
-
+        <pacjent plec='m' id='PA1' oddzial='Onkologiczny'>
+            <imie>Karol</imie>
+            <nazwisko>Bosak</nazwisko>
+            <pesel></pesel>
+            <diagnoza>Rak płuc</diagnoza>
         </pacjent>
-        <pacjent>
-
+        <pacjent plec='m' id='PA2' oddzial='Chirurgiczny'>
+            <imie>Bartłomiej</imie>
+            <nazwisko>Katar</nazwisko>
+            <pesel></pesel>
+            <diagnoza>Rana kłuta</diagnoza>
         </pacjent>
-        <pacjent>
-
+        <pacjent plec='k' id='PA3' oddzial='Ginekologiczny'>
+            <imie>Joanna</imie>
+            <nazwisko>Kosakowska</nazwisko>
+            <pesel></pesel>
+            <diagnoza>Poród</diagnoza>
         </pacjent>
-        <pacjent>
-
-        </pacjent>
-        <pacjent>
-
+        <pacjent plec='m' id='PA4' oddzial='Kardiologiczny'>
+            <imie>Seweryn</imie>
+            <nazwisko>Andrzej</nazwisko>
+            <pesel></pesel>
+            <diagnoza>Arytmia serca</diagnoza>
         </pacjent>
     </pacjenci>
-    <oddzialy>
-        <oddzial>Chirurgiczny</oddzial>
-        <oddzial>Onkologiczny</oddzial>
-        <oddzial>Położniczy</oddzial>
-        <oddzial>Kardiologiczny</oddzial>
-        <oddzial>Internistyczny</oddzial>
-    </oddzialy>
 </szpital>
