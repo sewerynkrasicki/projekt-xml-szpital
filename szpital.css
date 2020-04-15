@@ -132,3 +132,16 @@ lekarz:hover, pielegniarka:hover, ratownik:hover,
 pacjent:hover, środek_ochrony:hover, karetka:hover, oddzial:hover{
     transform: scale(1.05);
 }
+
+lekarz[plec='m']:hover, pielegniarka[plec='m']:hover, ratownik[plec='m']:hover,
+pacjent[plec='m']:hover{
+    background: #7f7fd5;
+    background: -webkit-linear-gradient(to bottom, #7f7fd5, #86a8e7, #91eae4);
+    background: linear-gradient(to bottom, #7f7fd5, #86a8e7, #91eae4); 
+} 
+lekarz[plec='k']:hover, pielegniarka[plec='k']:hover, ratownik[plec='k']:hover,
+pacjent[plec='k']:hover{
+    background: #ff0099;
+    background: -webkit-linear-gradient(to bottom, #ff0099, #493240);
+    background: linear-gradient(to bottom, #ff0099, #493240); 
+}
