@@ -1,11 +1,44 @@
+szpital{
+    background: #1fa2ff;
+    background: -webkit-linear-gradient(to right, #1fa2ff, #12d8fa, #a6ffcb);
+    background: linear-gradient(to right, #1fa2ff, #12d8fa, #a6ffcb);
+}
+
 lekarze, pielegniarki, ratownicy_medyczni, pacjenci, środki_ochrony, karetki, oddzialy{
     display: inline-block;
-    float: left;
     width: 20%;
-    border: solid black;
+    border: solid whitesmoke;
+    border-radius: 25px;
     padding: 10px;
     margin: 10px;
+    color: whitesmoke;
+    background: #aa076b; 
+    background: -webkit-linear-gradient(to right, #aa076b, #61045f);
+    background: linear-gradient(to right, #aa076b, #61045f);
 }
+
+lekarze{
+    margin-left: 4%;
+}
+
+pacjenci{
+    margin-right: 4%;
+}
+
+oddzialy{
+    margin-left: 15%;
+}
+
+środki_ochrony{
+    margin-right: 15%;
+}
+
+
+imie, data_ur, pesel, diagnoza, pencja, dostepnosc, specjalizacja{
+    display: block;
+}
+
+
 
 lekarze::before, pielegniarki::before, ratownicy_medyczni::before, 
 pacjenci::before, środki_ochrony::before, karetki::before, oddzialy::before{
@@ -16,9 +49,10 @@ pacjenci::before, środki_ochrony::before, karetki::before, oddzialy::before{
 lekarz, pielegniarka, ratownik, pacjent, oddzial, karetka, środek_ochrony{
     display: block;
     padding: 10px;
-    border: solid black;
+    border: solid whitesmoke;
     margin: 10px;
     text-align: center;
+    border-radius: 10px;
 }
 
 lekarze::before {
@@ -47,4 +81,36 @@ karetki::before{
 
 środki_ochrony::before{
     content: "Środki ochronne"
+}
+
+imie::before{
+    content: "Imie: ";
+}
+
+nazwisko::before{
+    content: "Nazwisko: ";
+}
+
+dostepnosc::before{
+    content: "Dostepność: ";
+}
+
+data_ur::before{
+    content: "Data ur.: ";
+}
+
+pesel::before{
+    content: "Pesel: ";
+}
+
+pensja::before{
+    content: "Pensja: ";
+}
+
+specjalizacja::before{
+    content: "Specjalizacja: ";
+}
+
+diagnoza::before{
+    content: "Diagnoza: ";
 }

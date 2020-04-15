@@ -37,7 +37,7 @@
                 <imie>Katarzyna</imie>
                 <nazwisko>Saska</nazwisko>
                 <data_ur>1969-12-21</data_ur>
-                <specjalizacja>Ginekologiczno-położnicza</specjalizacja>
+                <specjalizacja>Ginekologiczna</specjalizacja>
                 <pensja>3000</pensja>
             </pielegniarka>
             <pielegniarka id='P2' oddzial='Onkologiczny'>
@@ -67,18 +67,28 @@
                 <imie>Xawery</imie>
                 <nazwisko>Kula</nazwisko>
                 <data_ur>1996-06-21</data_ur>
+                <dostepnosc>NIE</dostepnosc>
                 <pensja>3000</pensja>
             </ratownik>
             <ratownik plec='k' id='R2'>
                 <imie>Matylda</imie>
                 <nazwisko>Sobolewska</nazwisko>
                 <data_ur>1979-01-23</data_ur>
+                <dostepnosc>TAK</dostepnosc>
                 <pensja>3000</pensja>
             </ratownik>
             <ratownik plec='m' id='R3'>
                 <imie>Roman</imie>
                 <nazwisko>Pilot</nazwisko>
                 <data_ur>1982-09-03</data_ur>
+                <dostepnosc>TAK</dostepnosc>
+                <pensja>3000</pensja>
+            </ratownik>
+            <ratownik plec='m' id='R4'>
+                <imie>Kazimierz</imie>
+                <nazwisko>Zamachowski</nazwisko>
+                <data_ur>1994-10-12</data_ur>
+                <dostepnosc>TAK</dostepnosc>
                 <pensja>3000</pensja>
             </ratownik>
         </ratownicy_medyczni>
