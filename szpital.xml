@@ -33,28 +33,28 @@
             </lekarz>
         </lekarze>
         <pielegniarki>
-            <pielegniarka id='P1' oddzial='Położniczy'>
+            <pielegniarka plec='k' id='P1' oddzial='Położniczy'>
                 <imie>Katarzyna</imie>
                 <nazwisko>Saska</nazwisko>
                 <data_ur>1969-12-21</data_ur>
                 <specjalizacja>Ginekologiczna</specjalizacja>
                 <pensja>3000</pensja>
             </pielegniarka>
-            <pielegniarka id='P2' oddzial='Onkologiczny'>
+            <pielegniarka plec='k' id='P2' oddzial='Onkologiczny'>
                 <imie>Grażyna</imie>
                 <nazwisko>Mysiel</nazwisko>
                 <data_ur>1994-02-13</data_ur>
                 <specjalizacja>Onkologiczna</specjalizacja>
                 <pensja>2700</pensja>
             </pielegniarka>
-            <pielegniarka id='P3' oddzial='Kardiologiczny'>
+            <pielegniarka plec='k' id='P3' oddzial='Kardiologiczny'>
                 <imie>Anna</imie>
                 <nazwisko>Skowronek</nazwisko>
                 <data_ur>1995-03-12</data_ur>
                 <specjalizacja>Kardiologiczna</specjalizacja>
                 <pensja>2500</pensja>
             </pielegniarka>
-            <pielegniarka id='P4' oddzial='Chirurgiczny'>
+            <pielegniarka plec='k' id='P4' oddzial='Chirurgiczny'>
                 <imie>Karolina</imie>
                 <nazwisko>Borowska</nazwisko>
                 <data_ur>1971-05-06</data_ur>
@@ -94,29 +94,33 @@
         </ratownicy_medyczni>
     </pracownicy>
     <pacjenci>
-        <pacjent plec='m' id='PA1' oddzial='Onkologiczny'>
+        <pacjent plec='m' id='PA1'>
             <imie>Karol</imie>
             <nazwisko>Bosak</nazwisko>
             <pesel>89110872633</pesel>
             <diagnoza>Rak płuc</diagnoza>
+            <oddzial>Onkologiczny</oddzial>
         </pacjent>
-        <pacjent plec='m' id='PA2' oddzial='Chirurgiczny'>
+        <pacjent plec='m' id='PA2'>
             <imie>Bartłomiej</imie>
             <nazwisko>Katar</nazwisko>
             <pesel>83110941171</pesel>
             <diagnoza>Rana kłuta</diagnoza>
+            <oddzial>Chirurgiczny</oddzial>
         </pacjent>
-        <pacjent plec='k' id='PA3' oddzial='Ginekologiczny'>
+        <pacjent plec='k' id='PA3'>
             <imie>Joanna</imie>
             <nazwisko>Kosakowska</nazwisko>
             <pesel>95032176889</pesel>
             <diagnoza>Poród</diagnoza>
+            <oddzial>Położniczy</oddzial>
         </pacjent>
-        <pacjent plec='m' id='PA4' oddzial='Kardiologiczny'>
+        <pacjent plec='m' id='PA4'>
             <imie>Seweryn</imie>
             <nazwisko>Andrzej</nazwisko>
             <pesel>85020739136</pesel>
             <diagnoza>Arytmia serca</diagnoza>
+            <oddzial>Kardiologiczny</oddzial>
         </pacjent>
     </pacjenci>
     <oddzialy>
