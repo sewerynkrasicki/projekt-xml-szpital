@@ -1,0 +1,50 @@
+lekarze, pielegniarki, ratownicy_medyczni, pacjenci, środki_ochrony, karetki, oddzialy{
+    display: inline-block;
+    float: left;
+    width: 20%;
+    border: solid black;
+    padding: 10px;
+    margin: 10px;
+}
+
+lekarze::before, pielegniarki::before, ratownicy_medyczni::before, 
+pacjenci::before, środki_ochrony::before, karetki::before, oddzialy::before{
+    text-align: center;
+    display: block;
+}
+
+lekarz, pielegniarka, ratownik, pacjent, oddzial, karetka, środek_ochrony{
+    display: block;
+    padding: 10px;
+    border: solid black;
+    margin: 10px;
+    text-align: center;
+}
+
+lekarze::before {
+    content: "Lekarze";
+}
+
+pielegniarki::before{
+    content: "Pielegniarki";
+}
+
+ratownicy_medyczni::before{
+    content: "Ratownicy";
+}
+
+pacjenci::before{
+    content: "Pacjenci";
+}
+
+oddzialy::before{
+    content: "Oddzialy";
+}
+
+karetki::before{
+    content: "Karetki"
+}
+
+środki_ochrony::before{
+    content: "Środki ochronne"
+}

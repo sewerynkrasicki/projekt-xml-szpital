@@ -1,45 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <?xml-stylesheet type="text/css" href="szpital.css" ?>
 <szpital>
-    <oddzialy>
-        <oddzial>Chirurgiczny</oddzial>
-        <oddzial>Onkologiczny</oddzial>
-        <oddzial>Położniczy</oddzial>
-        <oddzial>Kardiologiczny</oddzial>
-    </oddzialy>
-    <karetki>
-        <karetka nr_rej='NBR12345'>
-            <marka>Mercedes</marka>
-            <model>Sprinter</model>
-        </karetka>
-        <karetka nr_rej='NBR54321'>
-            <marka>Volkswagen</marka>
-            <model>Transporter</model>
-        </karetka>
-        <karetka nr_rej='NBR54123'>
-            <marka>Volkswagen</marka>
-            <model>Transporter</model>
-        </karetka>
-    </karetki>
-    <środki_ochrony>
-         <środek_ochrony>
-            <nazwa>Rękawiczki lateksowe</nazwa>
-            <ilość>5000</ilość>
-        </środek_ochrony>
-        <środek_ochrony>
-            <nazwa>Maseczki chirurgiczne</nazwa>
-            <ilość>400</ilość>
-        </środek_ochrony>
-        <środek_ochrony>
-            <nazwa>Fartuch ochronny</nazwa>
-            <ilość>500</ilość>
-        </środek_ochrony>
-    </środki_ochrony>
     <pracownicy>
         <lekarze>
             <lekarz plec='m' id='L1' oddzial='Onkologiczny'>
                 <imie>Grzegorz</imie>
-                <nazwisko>Brzeczyszczykiewicz</nazwisko>
+                <nazwisko>Brzeczyk</nazwisko>
                 <data_ur>1983-03-12</data_ur>
                 <specjalizacja>Onkologia</specjalizacja>
                 <pensja>6700</pensja>
@@ -69,7 +35,7 @@
         <pielegniarki>
             <pielegniarka id='P1' oddzial='Położniczy'>
                 <imie>Katarzyna</imie>
-                <nazwisko>Anglosaska</nazwisko>
+                <nazwisko>Saska</nazwisko>
                 <data_ur>1969-12-21</data_ur>
                 <specjalizacja>Ginekologiczno-położnicza</specjalizacja>
                 <pensja>3000</pensja>
@@ -143,4 +109,46 @@
             <diagnoza>Arytmia serca</diagnoza>
         </pacjent>
     </pacjenci>
+    <oddzialy>
+        <oddzial>Chirurgiczny</oddzial>
+        <oddzial>Onkologiczny</oddzial>
+        <oddzial>Położniczy</oddzial>
+        <oddzial>Kardiologiczny</oddzial>
+    </oddzialy>
+    <karetki>
+        <karetka nr_rej='NBR12345'>
+            <marka>Mercedes</marka>
+            <model>Sprinter</model>
+        </karetka>
+        <karetka nr_rej='NBR54321'>
+            <marka>Volkswagen</marka>
+            <model>Transporter</model>
+        </karetka>
+        <karetka nr_rej='NBR54123'>
+            <marka>Volkswagen</marka>
+            <model>Transporter</model>
+        </karetka>
+        <karetka nr_rej='NBR12354'>
+            <marka>Peugeot</marka>
+            <model>Boxer</model>
+        </karetka>
+    </karetki>
+    <środki_ochrony>
+         <środek_ochrony>
+            <nazwa>Rękawiczki lateksowe</nazwa>
+            <ilość>5000</ilość>
+        </środek_ochrony>
+        <środek_ochrony>
+            <nazwa>Maseczki chirurgiczne</nazwa>
+            <ilość>400</ilość>
+        </środek_ochrony>
+        <środek_ochrony>
+            <nazwa>Fartuch ochronny</nazwa>
+            <ilość>500</ilość>
+        </środek_ochrony>
+        <środek_ochrony>
+            <nazwa>Przylbice</nazwa>
+            <ilość>250</ilość>
+        </środek_ochrony>
+    </środki_ochrony>
 </szpital>
