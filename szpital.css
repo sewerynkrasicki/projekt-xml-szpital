@@ -153,3 +153,23 @@ pacjent[plec='k']:hover{
     background: -webkit-linear-gradient(to bottom, #ff0099, #493240);
     background: linear-gradient(to bottom, #ff0099, #493240); 
 }
+
+karetki{
+    counter-reset: num_karetka;
+}
+
+karetki > karetka::before{
+    font-weight: 700;
+    counter-increment: num_karetka;
+    content: counter(num_karetka)".";
+}
+
+środki_ochrony{
+    counter-reset: num_ochronne;
+}
+
+środki_ochrony > środek_ochrony::before{
+    font-weight: 700;
+    counter-increment: num_ochronne;
+    content: counter(num_ochronne)".";
+}
