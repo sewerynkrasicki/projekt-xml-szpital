@@ -2,6 +2,7 @@ szpital{
   background: #000000;
   background: -webkit-linear-gradient(to bottom, #000000, #434343);
   background: linear-gradient(to bottom, #000000, #434343); ; 
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 lekarze, pielegniarki, ratownicy_medyczni, pacjenci, środki_ochrony, karetki, oddzialy{
@@ -40,12 +41,6 @@ imie, data_ur, pesel, diagnoza, pencja, dostepnosc, specjalizacja, pacjent.oddzi
 }
 
 
-lekarze::before, pielegniarki::before, ratownicy_medyczni::before, 
-pacjenci::before, środki_ochrony::before, karetki::before, oddzialy::before{
-    text-align: center;
-    display: block;
-}
-
 lekarz, pielegniarka, ratownik, pacjent, oddzialy > oddzial, karetka, środek_ochrony{
     display: block;
     padding: 10px;
@@ -53,6 +48,13 @@ lekarz, pielegniarka, ratownik, pacjent, oddzialy > oddzial, karetka, środek_oc
     margin: 10px;
     text-align: center;
     border-radius: 10px;
+}
+
+lekarze::before, pielegniarki::before, ratownicy_medyczni::before, 
+pacjenci::before, środki_ochrony::before, karetki::before, oddzialy::before{
+    text-align: center;
+    display: block;
+    font-weight: 900;
 }
 
 lekarze::before {
@@ -81,6 +83,12 @@ karetki::before{
 
 środki_ochrony::before{
     content: "Środki ochronne"
+}
+
+imie::before, nazwisko::before, dostepnosc::before, data_ur::before,
+pesel::before, pensja::before, specjalizacja::before, diagnoza::before,
+oddzial::before, ilość::before{
+    font-weight: 700;
 }
 
 imie::before{
