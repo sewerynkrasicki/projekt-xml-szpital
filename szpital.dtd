@@ -1,0 +1,33 @@
+<!ELEMENT szpital (pracownicy, pacjenci, karetki, środki_ochrony)>
+
+<!ENTITY % pc "#PCDATA">
+<!ENTITY % cd "CDATA">
+<!ENTITY % odd "Położniczy|Onkologiczny|Kardiologiczny|Chirurgiczny">
+
+<!ELEMENT pracownicy (lekarze, pielegniarki, ratownicy_medyczni)>
+<!ELEMENT lekarze (lekarz+)>
+<!ELEMENT lekarz (imie, nazwisko, data_ur, specjalizacja, pensja)>
+
+<!ATTLIST lekarz id ID #REQUIRED>
+<!ATTLIST lekarz plec (m|k) #REQUIRED>
+<!ATTLIST lekarz oddzial (%odd;) #REQUIRED>
+
+<!ELEMENT imie (%pc;)>
+<!ELEMENT nazwisko (%pc;)>
+<!ELEMENT data_ur (%pc;)>
+<!ELEMENT specjalizacja (%pc;)>
+<!ELEMENT pensja (%pc;)>
+
+<!ELEMENT pielegniarki (pielegniarka+)>
+<!ELEMENT pielegniarka (imie, nazwisko, data_ur, specjalizacja, pensja)>
+
+<!ATTLIST pielegniarka id ID #REQUIRED>
+<!ATTLIST pielegniarka plec (m|k) #REQUIRED>
+<!ATTLIST pielegniarka oddzial (%odd;) #REQUIRED>
+
+<!ELEMENT ratownicy_medyczni (ratownik+)>
+<!ELEMENT ratownik (imie, nazwisko, data_ur, dostepnosc, pensja)>
+<!ELEMENT dostepnosc (TAK|NIE)>
+
+<!ATTLIST ratownik id ID #REQUIRED> 
+<!ATTLIST ratownik plec (m|k) #REQUIRED>
