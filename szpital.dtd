@@ -1,16 +1,18 @@
-<!ELEMENT szpital (pracownicy, pacjenci, karetki, środki_ochrony)>
+<!ELEMENT szpital (pracownicy, pacjenci, oddzialy, karetki, środki_ochrony)>
 
 <!ENTITY % pc "#PCDATA">
 <!ENTITY % cd "CDATA">
 <!ENTITY % odd "Położniczy|Onkologiczny|Kardiologiczny|Chirurgiczny">
+<!ENTITY % req "#REQUIRED">
+
 
 <!ELEMENT pracownicy (lekarze, pielegniarki, ratownicy_medyczni)>
 <!ELEMENT lekarze (lekarz+)>
 <!ELEMENT lekarz (imie, nazwisko, data_ur, specjalizacja, pensja)>
 
-<!ATTLIST lekarz id ID #REQUIRED>
-<!ATTLIST lekarz plec (m|k) #REQUIRED>
-<!ATTLIST lekarz oddzial (%odd;) #REQUIRED>
+<!ATTLIST lekarz id ID %req;>
+<!ATTLIST lekarz plec (m|k) %req;>
+<!ATTLIST lekarz oddzial (%odd;) %req;>
 
 <!ELEMENT imie (%pc;)>
 <!ELEMENT nazwisko (%pc;)>
@@ -21,16 +23,16 @@
 <!ELEMENT pielegniarki (pielegniarka+)>
 <!ELEMENT pielegniarka (imie, nazwisko, data_ur, specjalizacja, pensja)>
 
-<!ATTLIST pielegniarka id ID #REQUIRED>
+<!ATTLIST pielegniarka id ID %req;>
 <!ATTLIST pielegniarka plec (m|k) "k">
-<!ATTLIST pielegniarka oddzial (%odd;) #REQUIRED>
+<!ATTLIST pielegniarka oddzial (%odd;) %req;>
 
 <!ELEMENT ratownicy_medyczni (ratownik+)>
-<!ELEMENT ratownik (imie, nazwisko, data_ur, dostepnosc, pensja)>
+<!ELEMENT ratownik (imie, nazwisko, data_ur, dostepnosc?, pensja)>
 <!ELEMENT dostepnosc (%pc;)>
 
-<!ATTLIST ratownik id ID #REQUIRED> 
-<!ATTLIST ratownik plec (m|k) #REQUIRED>
+<!ATTLIST ratownik id ID %req;> 
+<!ATTLIST ratownik plec (m|k) %req;>
 
 <!ELEMENT pacjenci (pacjent*)>
 <!ELEMENT pacjent (imie,nazwisko,pesel,diagnoza,oddzial)>
@@ -38,19 +40,24 @@
 <!ELEMENT diagnoza (%pc;)>
 <!ELEMENT oddzial (%pc;)>
 
-<!ATTLIST pacjent id ID #REQUIRED>
-<!ATTLIST pacjent plec (m|k) #REQUIRED>
+<!ATTLIST pacjent id ID %req;>
+<!ATTLIST pacjent plec (m|k) %req;>
+<!ATTLIST pacjent id_lekarza IDREF %req;>
 
 <!ELEMENT oddzialy (oddzial,oddzial,oddzial,oddzial)>
-<!ELEMENT oddzial (%pc;)>
 
 <!ELEMENT karetki (karetka+)>
 <!ELEMENT karetka (marka,model)>
 <!ELEMENT marka (%pc;)>
 <!ELEMENT model (%pc;)>
 
-<!ATTLIST karetka nr_rej NMTOKENS #REQUIRED>
+<!ATTLIST karetka nr_rej NMTOKENS %req;>
+<!ATTLIST karetka zepsuty (tak) #IMPLIED>
 
+<!ELEMENT środki_ochrony (środek_ochrony*)>
+<!ELEMENT środek_ochrony (nazwa, ilość)>
+<!ELEMENT nazwa (%pc;)>
+<!ELEMENT ilość (%pc;)>
 
 
 

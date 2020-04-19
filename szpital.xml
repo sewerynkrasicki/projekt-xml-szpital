@@ -95,28 +95,28 @@
         </ratownicy_medyczni>
     </pracownicy>
     <pacjenci>
-        <pacjent plec='m' id='PA1'>
+        <pacjent plec='m' id='PA1' id_lekarza="L1">
             <imie>Karol</imie>
             <nazwisko>Bosak</nazwisko>
             <pesel>89110872633</pesel>
             <diagnoza>Rak płuc</diagnoza>
             <oddzial>Onkologiczny</oddzial>
         </pacjent>
-        <pacjent plec='m' id='PA2'>
+        <pacjent plec='m' id='PA2' id_lekarza="L4">
             <imie>Bartłomiej</imie>
             <nazwisko>Katar</nazwisko>
             <pesel>83110941171</pesel>
             <diagnoza>Rana kłuta</diagnoza>
             <oddzial>Chirurgiczny</oddzial>
         </pacjent>
-        <pacjent plec='k' id='PA3'>
+        <pacjent plec='k' id='PA3' id_lekarza="L3">
             <imie>Joanna</imie>
             <nazwisko>Kosakowska</nazwisko>
             <pesel>95032176889</pesel>
             <diagnoza>Poród</diagnoza>
             <oddzial>Położniczy</oddzial>
         </pacjent>
-        <pacjent plec='m' id='PA4'>
+        <pacjent plec='m' id='PA4' id_lekarza="L2">
             <imie>Seweryn</imie>
             <nazwisko>Andrzej</nazwisko>
             <pesel>85020739136</pesel>
