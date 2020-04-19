@@ -22,12 +22,36 @@
 <!ELEMENT pielegniarka (imie, nazwisko, data_ur, specjalizacja, pensja)>
 
 <!ATTLIST pielegniarka id ID #REQUIRED>
-<!ATTLIST pielegniarka plec (m|k) #REQUIRED>
+<!ATTLIST pielegniarka plec (m|k) "k">
 <!ATTLIST pielegniarka oddzial (%odd;) #REQUIRED>
 
 <!ELEMENT ratownicy_medyczni (ratownik+)>
 <!ELEMENT ratownik (imie, nazwisko, data_ur, dostepnosc, pensja)>
-<!ELEMENT dostepnosc (TAK|NIE)>
+<!ELEMENT dostepnosc (%pc;)>
 
 <!ATTLIST ratownik id ID #REQUIRED> 
 <!ATTLIST ratownik plec (m|k) #REQUIRED>
+
+<!ELEMENT pacjenci (pacjent*)>
+<!ELEMENT pacjent (imie,nazwisko,pesel,diagnoza,oddzial)>
+<!ELEMENT pesel (%pc;)>
+<!ELEMENT diagnoza (%pc;)>
+<!ELEMENT oddzial (%pc;)>
+
+<!ATTLIST pacjent id ID #REQUIRED>
+<!ATTLIST pacjent plec (m|k) #REQUIRED>
+
+<!ELEMENT oddzialy (oddzial,oddzial,oddzial,oddzial)>
+<!ELEMENT oddzial (%pc;)>
+
+<!ELEMENT karetki (karetka+)>
+<!ELEMENT karetka (marka,model)>
+<!ELEMENT marka (%pc;)>
+<!ELEMENT model (%pc;)>
+
+<!ATTLIST karetka nr_rej NMTOKENS #REQUIRED>
+
+
+
+
+
