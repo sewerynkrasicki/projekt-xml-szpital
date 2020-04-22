@@ -6,7 +6,8 @@
 <!ENTITY % req "#REQUIRED">
 
 
-<!ELEMENT pracownicy (lekarze, pielegniarki, ratownicy_medyczni)>
+<![INCLUDE[ <!ELEMENT pracownicy (lekarze, pielegniarki, ratownicy_medyczni)> ]]>
+<![IGNORE[ <!ELEMENT pracownicy (lekraze, pielegniarki, ratownicy_medyczni, laboranci)> ]]>
 <!ELEMENT lekarze (lekarz+)>
 <!ELEMENT lekarz (imie, nazwisko, data_ur, specjalizacja, pensja)>
 
@@ -55,9 +56,10 @@
 <!ATTLIST karetka zepsuty (tak) #IMPLIED>
 
 <!ELEMENT środki_ochrony (środek_ochrony*)>
-<!ELEMENT środek_ochrony (nazwa, ilość)>
+<!ELEMENT środek_ochrony (nazwa, ilość, zapas)>
 <!ELEMENT nazwa (%pc;)>
 <!ELEMENT ilość (%pc;)>
+<!ELEMENT zapas EMPTY>
 
 
 

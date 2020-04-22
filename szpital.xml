@@ -152,18 +152,22 @@
          <środek_ochrony>
             <nazwa>Rękawiczki lateksowe</nazwa>
             <ilość>5000</ilość>
+            <zapas></zapas>
         </środek_ochrony>
         <środek_ochrony>
             <nazwa>Maseczki chirurgiczne</nazwa>
             <ilość>400</ilość>
+            <zapas></zapas>
         </środek_ochrony>
         <środek_ochrony>
             <nazwa>Fartuch ochronny</nazwa>
             <ilość>500</ilość>
+            <zapas></zapas>
         </środek_ochrony>
         <środek_ochrony>
             <nazwa>Przylbice</nazwa>
             <ilość>250</ilość>
+            <zapas></zapas>
         </środek_ochrony>
     </środki_ochrony>
 </szpital>
