@@ -1,0 +1,34 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:element name="szpital" type="typSzpital"/>
+
+    <xsd:complexType name="typSzpital">
+        <xsd:sequence>
+            <xsd:element name="pracownicy" type="typPracownicy"/>
+            <xsd:element name="pacjenci" type="typPacjenci"/>
+            <xsd:element name="oddzialy" type="typOddzialy"/>
+            <xsd:element name="karetki" type="typKaretki"/>
+            <xsd:element name="środki_ochrony" type="typSrodki"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="typPracownicy">
+        <xsd:sequence>
+            <xsd:element name="lekarze" type="typLekarze"/>
+            <xsd:element name="pielegniarki" type="typPielegniarki"/>
+            <xsd:element name="ratownicy_medyczni" type="typRatownicy"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="typLekarze">
+        <xsd:sequence>
+            <xsd:element name="lekarz" type="typLekarz" maxOccurs="4"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="typLekarz">
+        <xsd:all>
+            
+        </xsd:all>
+    </xsd:complexType>
+
+</xsd:schema>
