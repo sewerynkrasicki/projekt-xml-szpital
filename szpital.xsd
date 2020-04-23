@@ -25,15 +25,45 @@
         </xsd:sequence>
     </xsd:complexType>
 
+    <xsd:complexType name="typPielegniarki">
+        <xsd:sequence>
+            <xsd:element name="pielegniarka" type="typPielegniarka" maxOccurs="4"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="typRatownicy">
+        <xsd:sequence>
+            <xsd:element name="ratownik" type="typRatownik" maxOccurs="4"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
     <xsd:complexType name="typLekarz">
         <xsd:all>
             <xsd:element name="imie" type="xsd:string"/>
             <xsd:element name="nazwisko" type="xsd:string"/>
             <xsd:element name="data_ur" type="xsd:date"/>
             <xsd:element name="specjalizacja" type="typSpecjalizacja"/>
-            <xsd:element name="pensja" type="xsd:integer"/>
+            <xsd:element name="pensja" type="xsd:unsignedInt"/>
         </xsd:all>
+        <xsd:attribute name="plec" type="typPlec" use="required"></xsd:attribute>
+        <xsd:attribute name="oddzial" type="typOddzial" use="optional"></xsd:attribute>
+        <xsd:attribute name="id" type="xsd:string" use="required"></xsd:attribute>
     </xsd:complexType>
+
+    <xsd:simpleType name="typOddzial">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="Onkologiczny"></xsd:enumeration>
+            <xsd:enumeration value="Kardiologiczny"></xsd:enumeration>
+            <xsd:enumeration value="Położniczy"></xsd:enumeration>
+            <xsd:enumeration value="Chirurgiczny"></xsd:enumeration>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="typPlec">
+        <xsd:restriction base="xsd:string">
+            <xsd:pattern value="m|k"></xsd:pattern>
+        </xsd:restriction>
+    </xsd:simpleType>
 
     <xsd:simpleType name="typSpecjalizacja">
         <xsd:restriction base="xsd:string">
@@ -41,6 +71,36 @@
             <xsd:enumeration value="Kardiologia"></xsd:enumeration>
             <xsd:enumeration value="Ginekologia"></xsd:enumeration>
             <xsd:enumeration value="Chirurgia"></xsd:enumeration>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:complexType name="typPielegniarka">
+        <xsd:all>
+            <xsd:element name="imie" type="xsd:string"/>
+            <xsd:element name="nazwisko" type="xsd:string"/>
+            <xsd:element name="data_ur" type="xsd:date"/>
+            <xsd:element name="specjalizacja" type="typSpecjalizacjaP"/>
+            <xsd:element name="pensja" type="typPensja"/>
+        </xsd:all>
+        <xsd:attribute name="plec" type="typPlec" default="k"></xsd:attribute>
+        <xsd:attribute name="oddzial" type="typOddzial" use="optional"></xsd:attribute>
+        <xsd:attribute name="id" type="xsd:string" use="required"></xsd:attribute>
+    </xsd:complexType>
+
+    <xsd:simpleType name="typSpecjalizacjaP">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="Onkologiczna"></xsd:enumeration>
+            <xsd:enumeration value="Kardiologiczna"></xsd:enumeration>
+            <xsd:enumeration value="Ginekologiczna"></xsd:enumeration>
+            <xsd:enumeration value="Chirurgiczna"></xsd:enumeration>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="typPensja">
+        <xsd:restriction base="xsd:integer">
+            <xsd:minExclusive value="2000"></xsd:minExclusive>
+            <xsd:maxExclusive value="3500"></xsd:maxExclusive>
+            <xsd:totalDigits value="4"></xsd:totalDigits>
         </xsd:restriction>
     </xsd:simpleType>
 
