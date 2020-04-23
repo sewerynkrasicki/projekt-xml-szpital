@@ -27,8 +27,21 @@
 
     <xsd:complexType name="typLekarz">
         <xsd:all>
-            
+            <xsd:element name="imie" type="xsd:string"/>
+            <xsd:element name="nazwisko" type="xsd:string"/>
+            <xsd:element name="data_ur" type="xsd:date"/>
+            <xsd:element name="specjalizacja" type="typSpecjalizacja"/>
+            <xsd:element name="pensja" type="xsd:integer"/>
         </xsd:all>
     </xsd:complexType>
+
+    <xsd:simpleType name="typSpecjalizacja">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="Onkologia"></xsd:enumeration>
+            <xsd:enumeration value="Kardiologia"></xsd:enumeration>
+            <xsd:enumeration value="Ginekologia"></xsd:enumeration>
+            <xsd:enumeration value="Chirurgia"></xsd:enumeration>
+        </xsd:restriction>
+    </xsd:simpleType>
 
 </xsd:schema>
