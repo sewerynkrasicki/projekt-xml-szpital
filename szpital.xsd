@@ -11,6 +11,17 @@
         </xsd:sequence>
     </xsd:complexType>
 
+    <xsd:complexType name="typPacjenci">
+        <xsd:sequence>
+            <xsd:element name="pacjent" type="typPacjent" maxOccurs="unbounded">
+                <xsd:keyref name="kluczLekarzRef" refer="kluczLekarz">
+                    <xsd:selector xpath="pacjent"/> 
+                    <xsd:field xpath="@id_lekarza"/>
+                </xsd:keyref>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+
     <xsd:complexType name="typPracownicy">
         <xsd:sequence>
             <xsd:element name="lekarze" type="typLekarze"/>
@@ -21,7 +32,12 @@
 
     <xsd:complexType name="typLekarze">
         <xsd:sequence>
-            <xsd:element name="lekarz" type="typLekarz" maxOccurs="4"/>
+            <xsd:element name="lekarz" type="typLekarz" maxOccurs="4">
+                <xsd:key name="kluczLekarz">
+                    <xsd:selector xpath="lekarz"/>
+                    <xsd:field xpath="@id"/>
+                </xsd:key>
+            </xsd:element>
         </xsd:sequence>
     </xsd:complexType>
 
@@ -38,16 +54,16 @@
     </xsd:complexType>
 
     <xsd:complexType name="typLekarz">
-        <xsd:all>
+        <xsd:sequence>
             <xsd:element name="imie" type="xsd:string"/>
             <xsd:element name="nazwisko" type="xsd:string"/>
             <xsd:element name="data_ur" type="xsd:date"/>
             <xsd:element name="specjalizacja" type="typSpecjalizacja"/>
             <xsd:element name="pensja" type="xsd:unsignedInt"/>
-        </xsd:all>
+        </xsd:sequence>
         <xsd:attribute name="plec" type="typPlec" use="required"></xsd:attribute>
         <xsd:attribute name="oddzial" type="typOddzial" use="optional"></xsd:attribute>
-        <xsd:attribute name="id" type="xsd:string" use="required"></xsd:attribute>
+        <xsd:attribute name="id" type="xsd:ID" use="required"></xsd:attribute>
     </xsd:complexType>
 
     <xsd:simpleType name="typOddzial">
@@ -89,20 +105,20 @@
     </xsd:simpleType>
 
     <xsd:complexType name="typPielegniarka">
-        <xsd:all>
+        <xsd:sequence>
             <xsd:element name="imie" type="xsd:string"/>
             <xsd:element name="nazwisko" type="xsd:string"/>
             <xsd:element name="data_ur" type="xsd:date"/>
             <xsd:element name="specjalizacja" type="typSpecjalizacja"/>
             <xsd:element name="pensja" type="typPensja"/>
-        </xsd:all>
+        </xsd:sequence>
         <xsd:attribute name="plec" type="typPlec" default="k"></xsd:attribute>
         <xsd:attribute name="oddzial" type="typOddzial" use="optional"></xsd:attribute>
         <xsd:attribute name="id" type="xsd:ID" use="required"></xsd:attribute>
     </xsd:complexType>
 
     <xsd:simpleType name="typPensja">
-        <xsd:restriction base="xsd:integer">
+        <xsd:restriction base="xsd:positiveInteger">
             <xsd:minExclusive value="2000"></xsd:minExclusive>
             <xsd:maxExclusive value="3500"></xsd:maxExclusive>
             <xsd:totalDigits value="4"></xsd:totalDigits>
@@ -110,13 +126,13 @@
     </xsd:simpleType>
 
     <xsd:complexType name="typRatownik">
-        <xsd:all>
+        <xsd:sequence>
             <xsd:element name="imie" type="xsd:string"/>
             <xsd:element name="nazwisko" type="xsd:string"/>
             <xsd:element name="data_ur" type="xsd:date"/>
             <xsd:element name="dostepnosc" type="typDostepnosc"></xsd:element>
             <xsd:element name="pensja" type="typPensja"/>
-        </xsd:all>
+        </xsd:sequence>
         <xsd:attribute name="plec" type="typPlec" use="required"></xsd:attribute>
         <xsd:attribute name="id" type="xsd:ID" use="required"></xsd:attribute>
     </xsd:complexType>
@@ -124,6 +140,25 @@
     <xsd:simpleType name="typDostepnosc">
         <xsd:restriction base="xsd:NMTOKEN">
             <xsd:pattern value="TAK|NIE"></xsd:pattern>
+        </xsd:restriction>
+    </xsd:simpleType>
+    
+    <xsd:complexType name="typPacjent">
+        <xsd:sequence>
+            <xsd:element name="imie" type="xsd:string"/>
+            <xsd:element name="nazwisko" type="xsd:string"/>
+            <xsd:element name="pesel" type="typPesel"/>
+            <xsd:element name="diagnoza" type="xsd:string"/>
+            <xsd:element name="oddzial" type="typOddzial"/>
+        </xsd:sequence>
+        <xsd:attribute name="plec" type="typPlec" use="required"></xsd:attribute>
+        <xsd:attribute name="id" type="xsd:ID" use="required"></xsd:attribute>
+        <xsd:attribute name="id_lekarza" type="xsd:IDREF"></xsd:attribute>
+    </xsd:complexType>
+
+    <xsd:simpleType name="typPesel">
+        <xsd:restriction base="xsd:unsignedLong">
+            <xsd:pattern value="[0-9]{11}"></xsd:pattern>
         </xsd:restriction>
     </xsd:simpleType>
 
