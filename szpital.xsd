@@ -1,5 +1,14 @@
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-    <xsd:element name="szpital" type="typSzpital"/>
+    <xsd:element name="szpital" type="typSzpital">
+        <xsd:key name="kluczLekarz">
+            <xsd:selector xpath="szpital/pracownicy/lekarze/lekarz"/>
+            <xsd:field xpath="@id"/>
+        </xsd:key>
+        <xsd:keyref name="kluczLekarzRef" refer="kluczLekarz">
+            <xsd:selector xpath="szpital/pacjenci/pacjent"/> 
+            <xsd:field xpath="@id_lekarza"/>
+        </xsd:keyref>
+    </xsd:element>
 
     <xsd:complexType name="typSzpital">
         <xsd:sequence>
@@ -11,16 +20,24 @@
         </xsd:sequence>
     </xsd:complexType>
 
-    <xsd:complexType name="typPacjenci">
+    <xsd:complexType name="typSrodki">
         <xsd:sequence>
-            <xsd:element name="pacjent" type="typPacjent" maxOccurs="unbounded">
-                <xsd:keyref name="kluczLekarzRef" refer="kluczLekarz">
-                    <xsd:selector xpath="pacjent"/> 
-                    <xsd:field xpath="@id_lekarza"/>
-                </xsd:keyref>
-            </xsd:element>
+            <xsd:element name="środek_ochrony" type="typŚrodek" minOccurs="4" maxOccurs="unbounded"/>
         </xsd:sequence>
     </xsd:complexType>
+
+    <xsd:complexType name="typKaretki">
+        <xsd:sequence>
+            <xsd:element name="karetka" type="typKaretka" maxOccurs="unbounded"></xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="typOddzialy">
+        <xsd:sequence>
+            <xsd:element name="oddzial" type="xsd:string" minOccurs="4" maxOccurs="4"></xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+
 
     <xsd:complexType name="typPracownicy">
         <xsd:sequence>
@@ -32,12 +49,13 @@
 
     <xsd:complexType name="typLekarze">
         <xsd:sequence>
-            <xsd:element name="lekarz" type="typLekarz" maxOccurs="4">
-                <xsd:key name="kluczLekarz">
-                    <xsd:selector xpath="lekarz"/>
-                    <xsd:field xpath="@id"/>
-                </xsd:key>
-            </xsd:element>
+            <xsd:element name="lekarz" type="typLekarz" maxOccurs="4"></xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="typPacjenci">
+        <xsd:sequence>
+            <xsd:element name="pacjent" type="typPacjent" maxOccurs="unbounded"></xsd:element>
         </xsd:sequence>
     </xsd:complexType>
 
@@ -161,5 +179,33 @@
             <xsd:pattern value="[0-9]{11}"></xsd:pattern>
         </xsd:restriction>
     </xsd:simpleType>
+
+    <xsd:group name="markaModel">
+        <xsd:all>
+            <xsd:element name="marka" type="xsd:string"></xsd:element>
+            <xsd:element name="model" type="xsd:string"></xsd:element>
+        </xsd:all>
+    </xsd:group>
+
+    <xsd:complexType name="typKaretka">
+        <xsd:group ref="markaModel"></xsd:group>
+        <xsd:attribute name="nr_rej" type="typRejestracja"></xsd:attribute>
+        <xsd:attribute name="zepsuty" type="xsd:NMTOKEN" use="optional"></xsd:attribute>
+    </xsd:complexType>
+
+    <xsd:simpleType name="typRejestracja">
+        <xsd:restriction base="xsd:ID">
+            <xsd:minLength value="7"></xsd:minLength>
+            <xsd:maxLength value="8"></xsd:maxLength>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:complexType name="typŚrodek">
+        <xsd:sequence>
+            <xsd:element name="nazwa" type="xsd:string"></xsd:element>
+            <xsd:element name="ilość" type="xsd:integer"></xsd:element>
+            <xsd:element name="zapas" type="xsd:string" fixed=""></xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
 
 </xsd:schema>
