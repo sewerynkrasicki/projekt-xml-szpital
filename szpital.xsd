@@ -27,7 +27,7 @@
 
     <xsd:complexType name="typPielegniarki">
         <xsd:sequence>
-            <xsd:element name="pielegniarka" type="typPielegniarka" maxOccurs="4"/>
+            <xsd:element name="pielegniarka" type="typPielegniarka" maxOccurs="unbounded"/>
         </xsd:sequence>
     </xsd:complexType>
 
@@ -60,12 +60,12 @@
     </xsd:simpleType>
 
     <xsd:simpleType name="typPlec">
-        <xsd:restriction base="xsd:string">
+        <xsd:restriction base="xsd:NMTOKEN">
             <xsd:pattern value="m|k"></xsd:pattern>
         </xsd:restriction>
     </xsd:simpleType>
 
-    <xsd:simpleType name="typSpecjalizacja">
+    <xsd:simpleType name="typSpecjalizacjaL">
         <xsd:restriction base="xsd:string">
             <xsd:enumeration value="Onkologia"></xsd:enumeration>
             <xsd:enumeration value="Kardiologia"></xsd:enumeration>
@@ -74,18 +74,6 @@
         </xsd:restriction>
     </xsd:simpleType>
 
-    <xsd:complexType name="typPielegniarka">
-        <xsd:all>
-            <xsd:element name="imie" type="xsd:string"/>
-            <xsd:element name="nazwisko" type="xsd:string"/>
-            <xsd:element name="data_ur" type="xsd:date"/>
-            <xsd:element name="specjalizacja" type="typSpecjalizacjaP"/>
-            <xsd:element name="pensja" type="typPensja"/>
-        </xsd:all>
-        <xsd:attribute name="plec" type="typPlec" default="k"></xsd:attribute>
-        <xsd:attribute name="oddzial" type="typOddzial" use="optional"></xsd:attribute>
-        <xsd:attribute name="id" type="xsd:string" use="required"></xsd:attribute>
-    </xsd:complexType>
 
     <xsd:simpleType name="typSpecjalizacjaP">
         <xsd:restriction base="xsd:string">
@@ -96,11 +84,46 @@
         </xsd:restriction>
     </xsd:simpleType>
 
+    <xsd:simpleType name="typSpecjalizacja">
+        <xsd:union memberTypes="typSpecjalizacjaL typSpecjalizacjaP"></xsd:union>
+    </xsd:simpleType>
+
+    <xsd:complexType name="typPielegniarka">
+        <xsd:all>
+            <xsd:element name="imie" type="xsd:string"/>
+            <xsd:element name="nazwisko" type="xsd:string"/>
+            <xsd:element name="data_ur" type="xsd:date"/>
+            <xsd:element name="specjalizacja" type="typSpecjalizacja"/>
+            <xsd:element name="pensja" type="typPensja"/>
+        </xsd:all>
+        <xsd:attribute name="plec" type="typPlec" default="k"></xsd:attribute>
+        <xsd:attribute name="oddzial" type="typOddzial" use="optional"></xsd:attribute>
+        <xsd:attribute name="id" type="xsd:ID" use="required"></xsd:attribute>
+    </xsd:complexType>
+
     <xsd:simpleType name="typPensja">
         <xsd:restriction base="xsd:integer">
             <xsd:minExclusive value="2000"></xsd:minExclusive>
             <xsd:maxExclusive value="3500"></xsd:maxExclusive>
             <xsd:totalDigits value="4"></xsd:totalDigits>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:complexType name="typRatownik">
+        <xsd:all>
+            <xsd:element name="imie" type="xsd:string"/>
+            <xsd:element name="nazwisko" type="xsd:string"/>
+            <xsd:element name="data_ur" type="xsd:date"/>
+            <xsd:element name="dostepnosc" type="typDostepnosc"></xsd:element>
+            <xsd:element name="pensja" type="typPensja"/>
+        </xsd:all>
+        <xsd:attribute name="plec" type="typPlec" use="required"></xsd:attribute>
+        <xsd:attribute name="id" type="xsd:ID" use="required"></xsd:attribute>
+    </xsd:complexType>
+
+    <xsd:simpleType name="typDostepnosc">
+        <xsd:restriction base="xsd:NMTOKEN">
+            <xsd:pattern value="TAK|NIE"></xsd:pattern>
         </xsd:restriction>
     </xsd:simpleType>
 
