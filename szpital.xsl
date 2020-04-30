@@ -9,9 +9,10 @@
 	</head>
 	<body>
 		<header><h1><xsl:text>Szpital</xsl:text></h1></header>
-		<xsl:comment>Mała baza danych szpitala</xsl:comment>
+		<h4><a href="szpital.xml"><xsl:text>Zobacz pełną strukture szpitala tutaj</xsl:text></a></h4>
+		<xsl:comment>Skrócona struktura szpitala</xsl:comment>
 		<section>
-			<table>
+			<table class="firstTable">
 				<tr>
 					<td>
 						<b><xsl:text>Liczba wszystkich pracowników</xsl:text></b>
@@ -73,9 +74,38 @@
 					</td>
 					<td>
 						<xsl:for-each select="pracownicy/ratownicy_medyczni/ratownik[dostepnosc='TAK']">
-							<xsl:value-of select="concat(imie, ' ', nazwisko)"></xsl:value-of>
+							<xsl:if test="@plec='m'">
+								<p class='m'><xsl:value-of select="concat(imie, ' ', nazwisko)"></xsl:value-of></p>
+							</xsl:if>
+							<xsl:if test="@plec='k'">
+								<p class='k'><xsl:value-of select="concat(imie, ' ', nazwisko)"></xsl:value-of></p>
+							</xsl:if>
 							<br></br>
 						</xsl:for-each>
+					</td>
+				</tr>
+				<tr>
+					<xsl:for-each select="pacjenci/pacjent">
+					</xsl:for-each>
+				</tr>
+			</table>
+			<h1><xsl:text>Sprzęt</xsl:text></h1>
+			<xsl:comment>Struktura sprzętu</xsl:comment>
+			<table class="secondTable">
+				<tr>
+					<td>
+						<b><xsl:text>Ilość karetek</xsl:text></b>
+					</td>
+					<td>
+						<xsl:value-of select="count(karetki/karetka)"/>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<b><xsl:text>Ilość oddziałów</xsl:text></b>
+					</td>
+					<td>
+						<xsl:value-of select="count(oddzialy/oddzial)"/>
 					</td>
 				</tr>
 				<tr>
