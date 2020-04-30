@@ -60,12 +60,7 @@
 						<b><xsl:text>Średnia liczba zarobków pracowników</xsl:text></b>
 					</td>
 					<td>
-						<xsl:value-of select="format-number(((sum(pracownicy/lekarze/lekarz/pensja)
-						+sum(pracownicy/pielegniarki/pielegniarka/pensja)
-						+sum(pracownicy/ratownicy_medyczni/ratownik/pensja)) div 
-						(count(pracownicy/lekarze/lekarz)
-						+count(pracownicy/pielegniarki/pielegniarka)
-						+count(pracownicy/ratownicy_medyczni/ratownik))), '0.00')"/>
+						<xsl:apply-templates select="pracownicy"/>
 					</td>
 				</tr>
 				<tr>
@@ -80,7 +75,6 @@
 							<xsl:if test="@plec='k'">
 								<p class='k'><xsl:value-of select="concat(imie, ' ', nazwisko)"></xsl:value-of></p>
 							</xsl:if>
-							<br></br>
 						</xsl:for-each>
 					</td>
 				</tr>
@@ -128,5 +122,17 @@
 			<p><b>Seweryn Krasicki 2020 &#169;</b></p>
 		</footer>
 	</body>
+<xsl:template match="pracownicy">
+	<xsl:comment>Średnia pensja pracowników</xsl:comment>
+	<xsl:value-of select="format-number(((sum(lekarze/lekarz/pensja)
+	+sum(pielegniarki/pielegniarka/pensja)
+	+sum(ratownicy_medyczni/ratownik/pensja)) div 
+	(count(lekarze/lekarz)
+	+count(pielegniarki/pielegniarka)
+	+count(ratownicy_medyczni/ratownik))), '0.00')"/>
+</xsl:template>
+</xsl:template>
+<xsl:template match="pacjenci">
+	<xsl:for-each select="pacjent">
 </xsl:template>
 </xsl:stylesheet>
