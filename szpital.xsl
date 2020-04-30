@@ -78,6 +78,20 @@
 						</xsl:for-each>
 					</td>
 				</tr>
+				<tr>
+					<td>
+						<b><xsl:text>Sprzęt medyczny według ilości</xsl:text></b>
+					</td>
+					<td>
+						<xsl:for-each select="środki_ochrony/środek_ochrony">
+							<xsl-sort select="ilość" order="descending">
+								<xsl:value-of select="nazwa"></xsl:value-of>
+								<xsl:text> Ilość: </xsl:text>
+								<xsl-value-of select="ilość"></xsl-value-of>
+							</xsl-sort>
+						</xsl:for-each>
+					</td>
+				</tr>
 			</table>
 		</section>
 		<footer>
