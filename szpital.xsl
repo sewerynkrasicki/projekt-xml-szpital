@@ -79,8 +79,7 @@
 					</td>
 				</tr>
 				<tr>
-					<xsl:for-each select="pacjenci/pacjent">
-					</xsl:for-each>
+					<xsl:apply-templates select="pacjenci"/>
 				</tr>
 			</table>
 			<h1><xsl:text>Sprzęt</xsl:text></h1>
@@ -134,5 +133,14 @@
 </xsl:template>
 <xsl:template match="pacjenci">
 	<xsl:for-each select="pacjent">
+		<xsl:choose>
+			<xsl:when test="@plec=['m']">
+				<p class='m'><xsl:value-of select="concat(imie, ' ', nazwisko)"></xsl:value-of></p>
+			</xsl:when>
+			<xsl:otherwise>
+				<p class='k'><xsl:value-of select="concat(imie, ' ', nazwisko)"></xsl:value-of></p>
+			</xsl:otherwise>
+		</xsl:choose>
+	</xsl:for-each>
 </xsl:template>
 </xsl:stylesheet>
