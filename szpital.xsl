@@ -79,7 +79,12 @@
 					</td>
 				</tr>
 				<tr>
-					<xsl:apply-templates select="pacjenci"/>
+					<td>
+						<b><xsl:text>Pacjenci</xsl:text></b>
+					</td>
+					<td>
+						<xsl:apply-templates select="pacjenci"/>
+					</td>
 				</tr>
 			</table>
 			<h1><xsl:text>Sprzęt</xsl:text></h1>
@@ -121,6 +126,7 @@
 			<p><b>Seweryn Krasicki 2020 &#169;</b></p>
 		</footer>
 	</body>
+</xsl:template>
 <xsl:template match="pracownicy">
 	<xsl:comment>Średnia pensja pracowników</xsl:comment>
 	<xsl:value-of select="format-number(((sum(lekarze/lekarz/pensja)
@@ -130,11 +136,10 @@
 	+count(pielegniarki/pielegniarka)
 	+count(ratownicy_medyczni/ratownik))), '0.00')"/>
 </xsl:template>
-</xsl:template>
 <xsl:template match="pacjenci">
 	<xsl:for-each select="pacjent">
 		<xsl:choose>
-			<xsl:when test="@plec=['m']">
+			<xsl:when test="@plec='m'">
 				<p class='m'><xsl:value-of select="concat(imie, ' ', nazwisko)"></xsl:value-of></p>
 			</xsl:when>
 			<xsl:otherwise>
