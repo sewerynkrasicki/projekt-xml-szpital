@@ -84,11 +84,11 @@
 					</td>
 					<td>
 						<xsl:for-each select="środki_ochrony/środek_ochrony">
-							<xsl-sort select="ilość" order="descending">
+							<xsl:sort select="ilość" order="descending"/>
 								<xsl:value-of select="nazwa"></xsl:value-of>
 								<xsl:text> Ilość: </xsl:text>
-								<xsl-value-of select="ilość"></xsl-value-of>
-							</xsl-sort>
+								<xsl:value-of select="ilość"></xsl:value-of>
+								<br></br>
 						</xsl:for-each>
 					</td>
 				</tr>
