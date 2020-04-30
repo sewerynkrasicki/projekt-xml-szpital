@@ -8,13 +8,13 @@
 		<title>Szpital</title>
 	</head>
 	<body>
-		<header><h1>Szpital</h1></header>
+		<header><h1><xsl:text>Szpital</xsl:text></h1></header>
 		<xsl:comment>Mała baza danych szpitala</xsl:comment>
 		<section>
 			<table>
 				<tr>
 					<td>
-						<b>Liczba wszystkich pracowników</b>
+						<b><xsl:text>Liczba wszystkich pracowników</xsl:text></b>
 					</td>
 					<td>
 						<xsl:value-of select="count(pracownicy/lekarze/lekarz)
@@ -24,7 +24,7 @@
 				</tr>
 				<tr>
 					<td>
-						<b>Liczba lekarzy</b>
+						<b><xsl:text>Liczba lekarzy</xsl:text></b>
 					</td>
 					<td>
 						<xsl:value-of select="count(pracownicy/lekarze/lekarz)"/>
@@ -32,7 +32,7 @@
 				</tr>
 				<tr>
 					<td>
-						<b>Liczba pielęgniarek</b>
+						<b><xsl:text>Liczba pielęgniarek</xsl:text></b>
 					</td>
 					<td>
 						<xsl:value-of select="count(pracownicy/pielegniarki/pielegniarka)"/>
@@ -40,7 +40,7 @@
 				</tr>
 				<tr>
 					<td>
-						<b>Liczba ratowników</b>
+						<b><xsl:text>Liczba ratowników</xsl:text></b>
 					</td>
 					<td>
 						<xsl:value-of select="count(pracownicy/ratownicy_medyczni/ratownik)"/>
@@ -48,7 +48,7 @@
 				</tr>
 				<tr>
 					<td>
-						<b>Liczba pacjentów</b>
+						<b><xsl:text>Liczba pacjentów</xsl:text></b>
 					</td>
 					<td>
 						<xsl:value-of select="count(pacjenci/pacjent)"/>
@@ -56,7 +56,7 @@
 				</tr>
 				<tr>
 					<td>
-						<b>Średnia liczba zarobków pracowników</b>
+						<b><xsl:text>Średnia liczba zarobków pracowników</xsl:text></b>
 					</td>
 					<td>
 						<xsl:value-of select="format-number(((sum(pracownicy/lekarze/lekarz/pensja)
@@ -69,10 +69,13 @@
 				</tr>
 				<tr>
 					<td>
-						<b>Dostepni ratownicy</b>
+						<b><xsl:text>Dostepni ratownicy</xsl:text></b>
 					</td>
 					<td>
-						<xsl:value-of select="count(pracownicy/ratownicy_medyczni/ratownik[dostepnosc='TAK'])"/>
+						<xsl:for-each select="pracownicy/ratownicy_medyczni/ratownik[dostepnosc='TAK']">
+							<xsl:value-of select="concat(imie, ' ', nazwisko)"></xsl:value-of>
+							<br></br>
+						</xsl:for-each>
 					</td>
 				</tr>
 			</table>
