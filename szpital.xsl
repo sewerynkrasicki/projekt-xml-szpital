@@ -72,7 +72,7 @@
 						<b>Dostepni ratownicy</b>
 					</td>
 					<td>
-						<xsl:value-of select="count(pracownicy/ratownicy_medyczni[ratownik="TAK"])"/>
+						<xsl:value-of select="count(pracownicy/ratownicy_medyczni/ratownik[dostepnosc='TAK'])"/>
 					</td>
 				</tr>
 			</table>
