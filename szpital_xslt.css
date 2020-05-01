@@ -1,0 +1,175 @@
+szpital{
+  background: #000000;
+  background: -webkit-linear-gradient(to bottom, #000000, #434343);
+  background: linear-gradient(to bottom, #000000, #434343); ; 
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+lekarze, pielegniarki, ratownicy_medyczni, pacjenci, środki_ochrony, karetki, oddzialy{
+    display: inline-block;
+    width: 20%;
+    border: solid whitesmoke;
+    border-radius: 25px;
+    padding: 10px;
+    margin: 10px;
+    color: whitesmoke;
+    background: #aa076b; 
+    background: -webkit-linear-gradient(to right, #aa076b, #61045f);
+    background: linear-gradient(to right, #aa076b, #61045f);
+    opacity: 0.7;
+}
+
+lekarze{
+    margin-left: 4%;
+}
+
+pacjenci{
+    margin-right: 4%;
+}
+
+oddzialy{
+    margin-left: 15%;
+}
+
+środki_ochrony{
+    margin-right: 15%;
+}
+
+
+imie, data_ur, pesel, diagnoza, pencja, dostepnosc, specjalizacja, pacjent.oddzial{
+    display: block;
+}
+
+
+lekarz, pielegniarka, ratownik, pacjent, oddzialy > oddzial, karetka, środek_ochrony{
+    display: block;
+    padding: 10px;
+    border: solid whitesmoke;
+    margin: 10px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+lekarze::before, pielegniarki::before, ratownicy_medyczni::before, 
+pacjenci::before, środki_ochrony::before, karetki::before, oddzialy::before{
+    text-align: center;
+    display: block;
+    font-weight: 900;
+}
+
+lekarze::before {
+    content: "Lekarze";
+}
+
+pielegniarki::before{
+    content: "Pielegniarki";
+}
+
+ratownicy_medyczni::before{
+    content: "Ratownicy";
+}
+
+pacjenci::before{
+    content: "Pacjenci";
+}
+
+oddzialy::before{
+    content: "Oddzialy";
+}
+
+karetki::before{
+    content: "Karetki"
+}
+
+środki_ochrony::before{
+    content: "Środki ochronne"
+}
+
+imie::before, nazwisko::before, dostepnosc::before, data_ur::before,
+pesel::before, pensja::before, specjalizacja::before, diagnoza::before,
+oddzial::before, ilość::before{
+    font-weight: 700;
+}
+
+imie::before{
+    content: "Imie: ";
+}
+
+nazwisko::before{
+    content: "Nazwisko: ";
+}
+
+dostepnosc::before{
+    content: "Dostepność: ";
+}
+
+data_ur::before{
+    content: "Data ur.: ";
+}
+
+pesel::before{
+    content: "Pesel: ";
+}
+
+pensja::before{
+    content: "Pensja: ";
+}
+
+specjalizacja::before{
+    content: "Specjalizacja: ";
+}
+
+diagnoza::before{
+    content: "Diagnoza: ";
+}
+
+oddzial::before{
+    content: "Oddział: ";
+}
+
+ilość::before{
+    content: "ilość: ";
+}
+
+lekarze:hover, pielegniarki:hover, ratownicy_medyczni:hover, 
+pacjenci:hover, środki_ochrony:hover, karetki:hover, oddzialy:hover{
+    opacity: 1.0;
+}
+
+lekarz:hover, pielegniarka:hover, ratownik:hover, 
+pacjent:hover, środek_ochrony:hover, karetka:hover, oddzial:hover{
+    transform: scale(1.05);
+}
+
+lekarz[plec='m']:hover, pielegniarka[plec='m']:hover, ratownik[plec='m']:hover,
+pacjent[plec='m']:hover{
+    background: #7f7fd5;
+    background: -webkit-linear-gradient(to bottom, #7f7fd5, #86a8e7, #91eae4);
+    background: linear-gradient(to bottom, #7f7fd5, #86a8e7, #91eae4); 
+} 
+lekarz[plec='k']:hover, pielegniarka[plec='k']:hover, ratownik[plec='k']:hover,
+pacjent[plec='k']:hover{
+    background: #ff0099;
+    background: -webkit-linear-gradient(to bottom, #ff0099, #493240);
+    background: linear-gradient(to bottom, #ff0099, #493240); 
+}
+
+karetki{
+    counter-reset: num_karetka;
+}
+
+karetki > karetka::before{
+    font-weight: 700;
+    counter-increment: num_karetka;
+    content: counter(num_karetka)".";
+}
+
+środki_ochrony{
+    counter-reset: num_ochronne;
+}
+
+środki_ochrony > środek_ochrony::before{
+    font-weight: 700;
+    counter-increment: num_ochronne;
+    content: counter(num_ochronne)".";
+}

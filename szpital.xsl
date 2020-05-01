@@ -2,14 +2,19 @@
 <xsl:output method="html" indent="yes" encoding="UTF-8"/>
 
 <xsl:template match="szpital">
+	<xsl:text disable-output-escaping='yes'>&lt;!DOCTYPE html></xsl:text>
+	<html lang="pl">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<meta http-equiv="Content-Language" content="pl" />
 		<title>Szpital</title>
 	</head>
 	<body>
 		<header><h1><xsl:text>Szpital</xsl:text></h1></header>
-		<h4><a href="szpital.xml"><xsl:text>Zobacz pełną strukture szpitala tutaj</xsl:text></a></h4>
+		<h4>
+			<a href="szpital.xml">
+				<xsl:text>Zobacz pełną strukture szpitala tutaj</xsl:text>
+			</a>
+		</h4>
 		<xsl:comment>Skrócona struktura szpitala</xsl:comment>
 		<section>
 			<table class="firstTable">
@@ -87,7 +92,7 @@
 					</td>
 				</tr>
 			</table>
-			<h1><xsl:text>Sprzęt</xsl:text></h1>
+			<h2><xsl:text>Sprzęt</xsl:text></h2>
 			<xsl:comment>Struktura sprzętu</xsl:comment>
 			<table class="secondTable">
 				<tr>
@@ -126,6 +131,7 @@
 			<p><b>Seweryn Krasicki 2020 &#169;</b></p>
 		</footer>
 	</body>
+</html>
 </xsl:template>
 <xsl:template match="pracownicy">
 	<xsl:comment>Średnia pensja pracowników</xsl:comment>
