@@ -17,6 +17,10 @@ h1{
     text-align: center;
 }
 
+h2{
+    text-align: center
+}
+
 h4{
     text-align: center;
 }
@@ -42,7 +46,8 @@ p{
     padding: 0;
 }
 
-.firstTable{
+.firstTable, .secondTable{
+    margin-top: 1%;
     margin-left:auto;
     margin-right: auto;
     background: #aa076b; 
@@ -56,11 +61,12 @@ p{
     border-spacing: 0;
     box-shadow: 0 0 0 4px whitesmoke;
 }
-.firstTable tr:last-child td:first-child {
+
+.secondTable, .firstTable tr:last-child td:first-child {
     border-bottom-left-radius: 10px;
 }
 
-.firstTable tr:last-child td:last-child {
+.secondTable, .firstTable tr:last-child td:last-child {
     border-bottom-right-radius: 10px;
 }
 
@@ -69,6 +75,15 @@ td{
     padding: 2%;
 }
 
-.firstTable:hover{
+.secondTable:hover, .firstTable:hover{
     opacity: 1.0;
+}
+
+.secondTable{
+    width: 25%;
+}
+
+footer{
+    margin-top: 0.5%;
+    text-align: center;
 }
