@@ -7,5 +7,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="xercesImpl" level="project" />
+    <orderEntry type="library" name="xml-apis" level="project" />
   </component>
 </module>
