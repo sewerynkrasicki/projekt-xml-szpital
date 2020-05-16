@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--<!DOCTYPE szpital SYSTEM "szpital.dtd">--><?xml-stylesheet type="text/css" href="szpital.css" ?><szpital xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="szpital.xsd">
+    <pracownicy>
+        <lekarze>
+            <lekarz id="L1" oddzial="Onkologiczny" plec="m">
+                <imie>Grzegorz</imie>
+                <nazwisko>Brzeczyk</nazwisko>
+                <data_ur>1983-03-12</data_ur>
+                <specjalizacja>Onkologia</specjalizacja>
+                <pensja>6700</pensja>
+            </lekarz>
+            <lekarz id="L2" oddzial="Kardiologiczny" plec="m">
+                <imie>Bartłomiej</imie>
+                <nazwisko>Żak</nazwisko>
+                <data_ur>1970-02-21</data_ur>
+                <specjalizacja>Kardiologia</specjalizacja>
+                <pensja>9000</pensja>
+            </lekarz>
+            <lekarz id="L3" oddzial="Położniczy" plec="m">
+                <imie>Kazimierz</imie>
+                <nazwisko>Kotłowski</nazwisko>
+                <data_ur>1986-12-17</data_ur>
+                <specjalizacja>Ginekologia</specjalizacja>
+                <pensja>6000</pensja>
+            </lekarz>
+            <lekarz id="L4" oddzial="Chirurgiczny" plec="k">
+                <imie>Alicja</imie>
+                <nazwisko>Czarnogórska</nazwisko>
+                <data_ur>1979-11-16</data_ur>
+                <specjalizacja>Chirurgia</specjalizacja>
+                <pensja>11000</pensja>
+            </lekarz>
+        <lekarz id="L5" oddzial="Kardiologiczny" plec="m">
+                <imie>Maria</imie>
+                <nazwisko>Kazimierzak</nazwisko>
+                <data_ur>1979-01-13</data_ur>
+                <specjalizacja>Kardiologia</specjalizacja>
+                <pensja>11000</pensja>
+            </lekarz></lekarze>
+        <pielegniarki>
+            <pielegniarka id="P1" oddzial="Położniczy" plec="k">
+                <imie>Katarzyna</imie>
+                <nazwisko>Saska</nazwisko>
+                <data_ur>1969-12-21</data_ur>
+                <specjalizacja>Ginekologiczna</specjalizacja>
+                <pensja>3000</pensja>
+            </pielegniarka>
+            <pielegniarka id="P2" oddzial="Onkologiczny" plec="k">
+                <imie>Grażyna</imie>
+                <nazwisko>Mysiel</nazwisko>
+                <data_ur>1994-02-13</data_ur>
+                <specjalizacja>Onkologiczna</specjalizacja>
+                <pensja>2700</pensja>
+            </pielegniarka>
+            <pielegniarka id="P3" oddzial="Kardiologiczny" plec="k">
+                <imie>Anna</imie>
+                <nazwisko>Skowronek</nazwisko>
+                <data_ur>1995-03-12</data_ur>
+                <specjalizacja>Kardiologiczna</specjalizacja>
+                <pensja>2500</pensja>
+            </pielegniarka>
+            <pielegniarka id="P4" oddzial="Chirurgiczny" plec="k">
+                <imie>Karolina</imie>
+                <nazwisko>Borowska</nazwisko>
+                <data_ur>1971-05-06</data_ur>
+                <specjalizacja>Chirurgiczna</specjalizacja>
+                <pensja>3200</pensja>
+            </pielegniarka>
+        </pielegniarki>
+        <ratownicy_medyczni>
+            
+            <ratownik id="R2" plec="k">
+                <imie>Matylda</imie>
+                <nazwisko>Sobolewska</nazwisko>
+                <data_ur>1979-01-23</data_ur>
+                <dostepnosc>TAK</dostepnosc>
+                <pensja>3000</pensja>
+            </ratownik>
+            <ratownik id="R3" plec="m">
+                <imie>Roman</imie>
+                <nazwisko>Pilot</nazwisko>
+                <data_ur>1982-09-03</data_ur>
+                <dostepnosc>TAK</dostepnosc>
+                <pensja>3000</pensja>
+            </ratownik>
+            <ratownik id="R4" plec="m">
+                <imie>Kazimierz</imie>
+                <nazwisko>Zamachowski</nazwisko>
+                <data_ur>1994-10-12</data_ur>
+                <dostepnosc>TAK</dostepnosc>
+                <pensja>3000</pensja>
+            </ratownik>
+        </ratownicy_medyczni>
+    </pracownicy>
+    <pacjenci>
+        <pacjent id="PA1" id_lekarza="L1" plec="m">
+            <imie>Karol</imie>
+            <nazwisko>Bosak</nazwisko>
+            <pesel>89110872633</pesel>
+            <diagnoza>Rak płuc</diagnoza>
+            <oddzial>Onkologiczny</oddzial>
+        </pacjent>
+        <pacjent id="PA2" id_lekarza="L4" plec="m">
+            <imie>Bartłomiej</imie>
+            <nazwisko>Katar</nazwisko>
+            <pesel>83110941171</pesel>
+            <diagnoza>Rana kłuta</diagnoza>
+            <oddzial>Chirurgiczny</oddzial>
+        </pacjent>
+        <pacjent id="PA3" id_lekarza="L3" plec="k">
+            <imie>Joanna</imie>
+            <nazwisko>Kosakowska</nazwisko>
+            <pesel>95032176889</pesel>
+            <diagnoza>Poród</diagnoza>
+            <oddzial>Położniczy</oddzial>
+        </pacjent>
+        <pacjent id="PA4" id_lekarza="L2" plec="m">
+            <imie>Seweryn</imie>
+            <nazwisko>Andrzej</nazwisko>
+            <pesel>85020739136</pesel>
+            <diagnoza>Arytmia serca</diagnoza>
+            <oddzial>Kardiologiczny</oddzial>
+        </pacjent>
+    </pacjenci>
+    <oddzialy>
+        <oddzial>Chirurgiczny</oddzial>
+        <oddzial>Onkologiczny</oddzial>
+        <oddzial>Położniczy</oddzial>
+        <oddzial>Kardiologiczny</oddzial>
+    </oddzialy>
+    <karetki>
+        <karetka nr_rej="NBR12345">
+            <marka>Mercedes</marka>
+            <model>Sprinter</model>
+        </karetka>
+        <karetka nr_rej="NBR54321">
+            <marka>Volkswagen</marka>
+            <model>Transporter</model>
+        </karetka>
+        <karetka nr_rej="NBR54123">
+            <marka>Volkswagen</marka>
+            <model>Transporter</model>
+        </karetka>
+        <karetka nr_rej="NBR12354">
+            <marka>Peugeot</marka>
+            <model>Boxer</model>
+        </karetka>
+    </karetki>
+    <środki_ochrony>
+         <środek_ochrony id="S1">
+            <nazwa>Rękawiczki lateksowe</nazwa>
+            <ilość>5000</ilość>
+            <zapas/>
+        </środek_ochrony>
+        <środek_ochrony id="S2">
+            <nazwa>Maseczki chirurgiczne</nazwa>
+            <ilość>400</ilość>
+            <zapas/>
+        </środek_ochrony>
+        <środek_ochrony id="S3">
+            <nazwa>Fartuch ochronny</nazwa>
+            <ilość>500</ilość>
+            <zapas/>
+        </środek_ochrony>
+        <środek_ochrony id="S4">
+            <nazwa>Przylbice</nazwa>
+            <ilość>250</ilość>
+            <zapas/>
+        </środek_ochrony>
+    </środki_ochrony>
+</szpital>

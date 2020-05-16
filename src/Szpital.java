@@ -4,7 +4,6 @@ import org.w3c.dom.ls.*;
 
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.security.spec.RSAOtherPrimeInfo;
 
 public class Szpital {
     public static Document document;
@@ -19,12 +18,11 @@ public class Szpital {
         DOMErrorHandler errorHandler = getErrorHandler();
         config.setParameter("error-handler", errorHandler);
         config.setParameter("validate", Boolean.TRUE);
-        config.setParameter("schema-type", "http://www.w3.org/2001/XMLSchema");
-        //config.setParameter("schema-location",  szpital.dtd);
+        //config.setParameter("schema-type", "http://www.w3.org/2001/XMLSchema");
+        //config.setParameter("schema-location",  szpital.xsd);
         //
         System.out.println("Parsowanie ...");
         document = builder.parseURI("szpital.xml");
-        /*
         //Nowy lekarz
         Element elem = document.getElementById("L1");
         Element newElem = (Element) elem.cloneNode(true);
@@ -54,7 +52,9 @@ public class Szpital {
                 n.setTextContent("11000");
             }
         }
-        document.getFirstChild().insertBefore(newElem,null);
+        NodeList lek = document.getElementsByTagName("lekarze");
+        Element el = (Element) lek.item(0);
+        el.appendChild(newElem);
 
         //Usunięcie ratownika medycznego który nie jest dostępny
 
@@ -67,7 +67,6 @@ public class Szpital {
                 i-=1;
             }
         }
-        */
 
         //Wypisanie pacjentów
         NodeList nl1 = document.getElementsByTagName("pacjent");
@@ -133,21 +132,23 @@ public class Szpital {
         System.out.println("Pielegniarek: "+ilePielegniarek);
         System.out.println("Średnia pensja lekarza: " + sredniaPensjaLekarza);
         System.out.println("Średnia pensja pielegniarki: " + sredniaPensjaPielegniarki);
+
         //Dodanie atrybutu do środków ochronnych
+        NodeList nl4 = document.getElementsByTagName("środek_ochrony");
+        for(int i = 0; i < nl4.getLength(); i++){
+            Element element = (Element) nl4.item(i);
+            element.setAttribute("id", "S"+(i+1));
+        }
 
 
-
-        /*
         //Serializacja
         LSSerializer writer = impl.createLSSerializer();
         config = writer.getDomConfig();
         config.setParameter("xml-declaration", Boolean.TRUE);
         LSOutput out = impl.createLSOutput();
-        out.setEncoding("latin2");
-        out.setByteStream(new FileOutputStream("DOM_szpital.xml");
+        out.setEncoding("utf-8");
+        out.setByteStream(new FileOutputStream("DOM_szpital.xml"));
         writer.write(document, out);
-        //
-         */
 
     }
 
