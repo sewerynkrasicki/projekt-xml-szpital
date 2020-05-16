@@ -4,7 +4,7 @@ import org.w3c.dom.ls.*;
 
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.util.Scanner;
+import java.security.spec.RSAOtherPrimeInfo;
 
 public class Szpital {
     public static Document document;
@@ -20,11 +20,11 @@ public class Szpital {
         config.setParameter("error-handler", errorHandler);
         config.setParameter("validate", Boolean.TRUE);
         config.setParameter("schema-type", "http://www.w3.org/2001/XMLSchema");
-        config.setParameter("schema-location",  args[1]);
+        //config.setParameter("schema-location",  szpital.dtd);
         //
-        System.out.println("Parsowanie " + args[0] + "...");
-        document = builder.parseURI(args[0]);
-
+        System.out.println("Parsowanie ...");
+        document = builder.parseURI("szpital.xml");
+        /*
         //Nowy lekarz
         Element elem = document.getElementById("L1");
         Element newElem = (Element) elem.cloneNode(true);
@@ -67,24 +67,25 @@ public class Szpital {
                 i-=1;
             }
         }
+        */
 
         //Wypisanie pacjentów
         NodeList nl1 = document.getElementsByTagName("pacjent");
         for(int i = 0; i < nl1.getLength(); i++){
             Node node = nl1.item(i);
             Element element = (Element)  node;
-            String id = element.getAttribute("plec");
-            String plec = element.getAttribute("id");
+            String plec = element.getAttribute("plec");
+            String id = element.getAttribute("id");
             String id_lekarza = element.getAttribute("id_lekarza");
-            Node node_imie = elem.getElementsByTagName("imie").item(0);
+            Node node_imie = element.getElementsByTagName("imie").item(0);
             String imie = node_imie.getTextContent();
-            Node node_nazwisko = elem.getElementsByTagName("nazwisko").item(0);
+            Node node_nazwisko = element.getElementsByTagName("nazwisko").item(0);
             String nazwisko = node_nazwisko.getTextContent();
-            Node pesel = elem.getElementsByTagName("pesel").item(0);
+            Node pesel = element.getElementsByTagName("pesel").item(0);
             String psl = pesel.getTextContent();
-            Node diagnoza = elem.getElementsByTagName("diagnoza").item(0);
+            Node diagnoza = element.getElementsByTagName("diagnoza").item(0);
             String diag = diagnoza.getTextContent();
-            Node oddzial = elem.getElementsByTagName("oddzial").item(0);
+            Node oddzial = element.getElementsByTagName("oddzial").item(0);
             String odd = oddzial.getTextContent();
 
             System.out.println("Id =" + id);
@@ -94,22 +95,59 @@ public class Szpital {
             System.out.println("Nazwisko: "+nazwisko);
             System.out.println("Pesel: "+psl);
             System.out.println("Diagnoza: "+diag);
-            System.out.println("Odzdzial: "+ odd);
+            System.out.println("Oddzial: "+ odd);
             System.out.println("--------------------------------");
-
         }
 
+        //Statystyki
+        int ileLekarzy = document.getElementsByTagName("lekarz").getLength();
+        int ilePacjentow = document.getElementsByTagName("pacjent").getLength();
+        int ilePielegniarek = document.getElementsByTagName("pielegniarka").getLength();
+        double suma = 0;
+        double suma1 = 0;
+        NodeList nl2 = document.getElementsByTagName("lekarz");
+        for(int i = 0; i < nl2.getLength(); i++) {
+            NodeList ki = nl2.item(i).getChildNodes();
+            for(int j=0; j<ki.getLength(); j++) {
+                Node node2 = ki.item(j);
+                if (node2.getNodeName().equals("pensja")) {
+                    suma += Integer.parseInt(node2.getTextContent());
+                }
+            }
+        }
+        NodeList nl3 = document.getElementsByTagName("pielegniarka");
+        for(int i = 0; i < nl3.getLength(); i++) {
+            NodeList ki = nl3.item(i).getChildNodes();
+            for(int j=0; j<ki.getLength(); j++) {
+                Node node2 = ki.item(j);
+                if (node2.getNodeName().equals("pensja")) {
+                    suma1 += Integer.parseInt(node2.getTextContent());
+                }
+            }
+        }
+        double sredniaPensjaLekarza = suma/ileLekarzy;
+        double sredniaPensjaPielegniarki = suma1/ilePielegniarek;
+        System.out.println("Statystyki");
+        System.out.println("Lekarzy: "+ileLekarzy);
+        System.out.println("Pacjentow: " +ilePacjentow);
+        System.out.println("Pielegniarek: "+ilePielegniarek);
+        System.out.println("Średnia pensja lekarza: " + sredniaPensjaLekarza);
+        System.out.println("Średnia pensja pielegniarki: " + sredniaPensjaPielegniarki);
+        //Dodanie atrybutu do środków ochronnych
 
 
+
+        /*
         //Serializacja
         LSSerializer writer = impl.createLSSerializer();
         config = writer.getDomConfig();
         config.setParameter("xml-declaration", Boolean.TRUE);
         LSOutput out = impl.createLSOutput();
         out.setEncoding("latin2");
-        out.setByteStream(new FileOutputStream("dom_" + args[0]));
+        out.setByteStream(new FileOutputStream("DOM_szpital.xml");
         writer.write(document, out);
         //
+         */
 
     }
 
