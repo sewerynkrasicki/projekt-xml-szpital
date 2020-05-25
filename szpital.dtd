@@ -7,9 +7,10 @@
 
 
 <![INCLUDE[ <!ELEMENT pracownicy (lekarze, pielegniarki, ratownicy_medyczni)> ]]>
-<![IGNORE[ <!ELEMENT pracownicy (lekraze, pielegniarki, ratownicy_medyczni, laboranci)> ]]>
+<![IGNORE[ <!ELEMENT pracownicy (lekarze, pielegniarki, ratownicy_medyczni, laboranci)> ]]>
 <!ELEMENT lekarze (lekarz+)>
 <!ELEMENT lekarz (imie, nazwisko, data_ur, specjalizacja, pensja)>
+<!ELEMENT laboranci (imie, nazwisko, data_ur, specjalizacja, pensja)>
 
 <!ATTLIST lekarz id ID %req;>
 <!ATTLIST lekarz plec (m|k) %req;>
