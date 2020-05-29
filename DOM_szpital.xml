@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--<!DOCTYPE szpital SYSTEM "szpital.dtd">--><?xml-stylesheet type="text/css" href="szpital.css" ?><szpital xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="szpital.xsd">
+<!--<szpital>-->
     <pracownicy>
         <lekarze>
             <lekarz id="L1" oddzial="Onkologiczny" plec="m">
